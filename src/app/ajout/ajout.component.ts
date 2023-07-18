@@ -3,28 +3,29 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-ajout',
   templateUrl: './ajout.component.html',
-  styleUrls: ['./ajout.component.scss']
+  styleUrls: ['./ajout.component.scss'],
 })
-
-
 export class AjoutComponent {
+  article = {
+    title: '',
+    description: '',
+    picture: '',
+    date: '',
+  };
 
-  
-article = {
-  titre: '',
-  description: '',
-  picture: '',
-  date: '',
-};
+  articles: any[] = [];
 
-
- articles :any[]=[];
-
-
-  constructor() { }
-
-  ngOnInit(): void {
+  addArticle() {
+    this.articles.push(this.article);
+    this.article = {
+      title: '',
+      description: '',
+      picture: '',
+      date: '',
+    };
   }
 
+  constructor() {}
 
+  ngOnInit(): void {}
 }

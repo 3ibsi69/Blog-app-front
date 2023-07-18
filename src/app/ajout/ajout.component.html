@@ -1,21 +1,50 @@
 <div class="container">
+  <h1 class="header">Blog Articles</h1>
   <div class="inputs">
-    <div class="input">
-      <label for="title">title</label>
-      <input type="text" id="title" />
-    </div>
-    <div class="input">
-      <label for="description">description</label>
-      <input type="text" id="description" />
-    </div>
-    <div class="input">
-      <label for="image">image</label>
-      <input type="text" id="image" />
-    </div>
+    <input
+      class="input"
+      type="text"
+      placeholder="title"
+      [(ngModel)]="article.title"
+    />
+    <input
+      class="input"
+      type="text"
+      placeholder="description"
+      [(ngModel)]="article.description"
+    />
+    <input
+      class="input"
+      type="text"
+      placeholder="Pic Url"
+      [(ngModel)]="article.picture"
+    />
   </div>
 
   <div class="buttons">
-    <button class="btn btn-primary">Ajouter</button>
-    <button class="btn btn-primary">Annuler</button>
+    <button class="btn" (click)="addArticle()">Add</button>
+    <button class="btn">Cancel</button>
+  </div>
+
+  <div class="Articles" *ngFor="let i of articles">
+    <div class="article_title">
+      <h1>Title:</h1>
+      <p>{{ i.title }}</p>
+    </div>
+    <div class="article_description">
+      <h1>description:</h1>
+      <p>
+        {{ i.description }}
+      </p>
+    </div>
+    <div class="article_pic">
+      <h1>image:</h1>
+      <img [src]="i.picture" alt="" />
+    </div>
+
+    <div class="article_buttons">
+      <button class="btn">Edit</button>
+      <button class="btn">Delete</button>
+    </div>
   </div>
 </div>
