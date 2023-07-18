@@ -9,13 +9,15 @@ import { ListBlogsComponent } from './list-blogs/list-blogs.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { UpdateComponent } from './update/update.component';
 @NgModule({
   declarations: [
     AppComponent,
     AjoutComponent,
     ListBlogsComponent,
     NavbarComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    UpdateComponent
   ],
   imports: [
     BrowserModule,

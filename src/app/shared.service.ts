@@ -24,6 +24,14 @@ export class SharedService {
     return this.http.delete(this.url+id);
   }
 
+  getArticleById(id:any){
+    return this.http.get(this.url+id);
+  }
+
+  updateArticle(id:any,article:any){
+    return this.http.put(this.url+id,article);
+  }
+  
 
 
   
