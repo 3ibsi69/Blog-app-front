@@ -9,10 +9,20 @@ import { SharedService } from '../shared.service';
 export class ListBlogsComponent {
 
 
+  Articles:any ;
 
   constructor(public _shared:SharedService) { }
 
   ngOnInit(): void {
+    this._shared.getAllArticles()
+    .subscribe(
+      res=>{
+        this.Articles = res;
+      },
+      err=>{
+        console.log(err);
+      }
+    )
   }
 
 }

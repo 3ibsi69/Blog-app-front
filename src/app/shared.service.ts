@@ -9,13 +9,17 @@ export class SharedService {
   constructor(private http:HttpClient) { }
  private url="http://localhost:3000/";
 
-  articles: any[] = [];
 
   createNewArticle(article:any){
 
      return this.http.post(this.url,article);
-     
+
   }
+
+  getAllArticles(){
+    return this.http.get(this.url);
+  }
+  
 
   
 }
