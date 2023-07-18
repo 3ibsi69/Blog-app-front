@@ -25,4 +25,16 @@ export class ListBlogsComponent {
     )
   }
 
+  deleteArticle(id:any){
+    this._shared.deleteArticle(id)
+    .subscribe(
+      res=>{
+        this.ngOnInit();
+      },
+      err=>{
+        console.log(err);
+      }
+    )
+
+}
 }

@@ -19,7 +19,12 @@ export class SharedService {
   getAllArticles(){
     return this.http.get(this.url);
   }
-  
+
+  deleteArticle(id:any){   
+    return this.http.delete(this.url+id);
+  }
+
+
 
   
 }
