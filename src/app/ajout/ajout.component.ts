@@ -19,13 +19,22 @@ export class AjoutComponent {
 
 
   addArticle() {
-    this._shared.articles.push(this.article);
-    this.article = {
-      title: '',
-      description: '',
-      picture: '',
-      date: '',
-    };
+   this._shared.createNewArticle(this.article)
+   .subscribe(
+      res=>{
+        this.article = {
+          title: '',
+          description: '',
+          picture: '',
+          date: '',
+        };
+      },
+      err=>{
+        console.log(err);
+      }
+
+    )
+  
   }
 
   constructor( public _shared:SharedService ) {}

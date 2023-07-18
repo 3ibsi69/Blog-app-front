@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,9 +6,16 @@ import { Injectable } from '@angular/core';
 })
 export class SharedService {
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
+ private url="http://localhost:3000/";
 
   articles: any[] = [];
+
+  createNewArticle(article:any){
+
+     return this.http.post(this.url,article);
+     
+  }
 
   
 }

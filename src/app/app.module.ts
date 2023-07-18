@@ -7,7 +7,7 @@ import { AjoutComponent } from './ajout/ajout.component';
 import { FormsModule } from '@angular/forms';
 import { ListBlogsComponent } from './list-blogs/list-blogs.component';
 import { NavbarComponent } from './navbar/navbar.component';
-
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +18,8 @@ import { NavbarComponent } from './navbar/navbar.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
   
   ],
   providers: [],
