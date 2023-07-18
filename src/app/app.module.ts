@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AjoutComponent } from './ajout/ajout.component';
 import { FormsModule } from '@angular/forms';
+import { ListBlogsComponent } from './list-blogs/list-blogs.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AjoutComponent
+    AjoutComponent,
+    ListBlogsComponent
   ],
   imports: [
     BrowserModule,

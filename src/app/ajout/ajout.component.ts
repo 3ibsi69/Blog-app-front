@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SharedService } from '../shared.service';
 
 @Component({
   selector: 'app-ajout',
@@ -6,6 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./ajout.component.scss'],
 })
 export class AjoutComponent {
+
+
+
   article = {
     title: '',
     description: '',
@@ -13,10 +17,9 @@ export class AjoutComponent {
     date: '',
   };
 
-  articles: any[] = [];
 
   addArticle() {
-    this.articles.push(this.article);
+    this._shared.articles.push(this.article);
     this.article = {
       title: '',
       description: '',
@@ -25,7 +28,7 @@ export class AjoutComponent {
     };
   }
 
-  constructor() {}
+  constructor( public _shared:SharedService ) {}
 
   ngOnInit(): void {}
 }

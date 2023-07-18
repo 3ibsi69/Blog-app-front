@@ -1,0 +1,21 @@
+<div class="Articles" *ngFor="let i of _shared.articles">
+  <div class="article_title">
+    <h1>Title:</h1>
+    <p>{{ i.title }}</p>
+  </div>
+  <div class="article_description">
+    <h1>description:</h1>
+    <p>
+      {{ i.description }}
+    </p>
+  </div>
+  <div class="article_pic">
+    <h1>image:</h1>
+    <img [src]="i.picture" alt="" />
+  </div>
+
+  <div class="article_buttons">
+    <button class="btn">Edit</button>
+    <button class="btn">Delete</button>
+  </div>
+</div>

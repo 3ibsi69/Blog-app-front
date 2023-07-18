@@ -1,0 +1,58 @@
+.Articles {
+    width: 90%;
+    min-height: 500px;
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    .article_title,
+    .article_description,
+    .article_pic {
+      h1 {
+        text-align: flex-start;
+        margin-left: 20px;
+        text-transform: capitalize;
+      }
+      p {
+        text-align: flex-start;
+        margin-left: 20px;
+      }
+    }
+    .article_pic {
+      img {
+        width: 350px;
+        height: 350px;
+        margin-left: 20px;
+      }
+    }
+    .article_buttons {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-top: 10px;
+      margin-left: 20px;
+
+      .btn {
+        width: 100px;
+        height: 30px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        margin-bottom: 10px;
+        padding: 5px;
+        font-size: 16px;
+        margin-left: 10px;
+
+        &:focus {
+          outline: none;
+          border: 1px solid #000;
+        }
+      }
+      .btn:first-child:hover {
+        background-color: #0d6efd;
+        color: #fff;
+      }
+      .btn:last-child:hover {
+        background-color: #dc3545;
+        color: #fff;
+      }
+    }
+  }
