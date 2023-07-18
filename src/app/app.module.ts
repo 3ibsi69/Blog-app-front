@@ -8,12 +8,14 @@ import { FormsModule } from '@angular/forms';
 import { ListBlogsComponent } from './list-blogs/list-blogs.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NotfoundComponent } from './notfound/notfound.component';
 @NgModule({
   declarations: [
     AppComponent,
     AjoutComponent,
     ListBlogsComponent,
-    NavbarComponent
+    NavbarComponent,
+    NotfoundComponent
   ],
   imports: [
     BrowserModule,
