@@ -2,28 +2,45 @@
   <h1 class="header">Add Article</h1>
 
   <div class="inputs">
-    <input
-      class="input-title"
-      type="text"
-      placeholder="title"
-      [(ngModel)]="article.title"
-    />
-
-    <textarea
-      class="input-desc"
-      placeholder="Description"
-      [(ngModel)]="article.description"
-    ></textarea>
-
-    <input
-      class="input-url"
-      type="text"
-      placeholder="Pic Url"
-      [(ngModel)]="article.picture"
-    />
+    <div *ngFor="let i of blogData">
+      <input
+        *ngIf="i.tag !== 'title' && i.tag !== 'description' && i.tag !== 'img'"
+        type="text"
+        [placeholder]="i.tag"
+        [(ngModel)]="i.content"
+      />
+      <input
+        *ngIf="i.tag === 'title'"
+        type="text"
+        class="input-title"
+        [placeholder]="i.tag"
+        [(ngModel)]="article.title"
+      />
+      <input
+        *ngIf="i.tag === 'description'"
+        type="text"
+        class="input-desc"
+        [placeholder]="i.tag"
+        [(ngModel)]="article.description"
+      />
+      <input
+        *ngIf="i.tag === 'img'"
+        type="text"
+        class="input-url"
+        [placeholder]="i.tag"
+        [(ngModel)]="article.picture"
+      />
+    </div>
   </div>
 
   <div class="buttons">
     <button class="btn" (click)="addArticle()">Add</button>
+    <select [(ngModel)]="selectedTag" id="tag">
+      <option value="">Select a tag</option>
+      <option value="title">Title</option>
+      <option value="description">Description</option>
+      <option value="img">Picture</option>
+    </select>
+    <button class="btn" (click)="addInput()">+</button>
   </div>
 </div>

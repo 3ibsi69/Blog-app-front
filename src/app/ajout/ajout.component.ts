@@ -7,19 +7,27 @@ import { SharedService } from '../shared.service';
   styleUrls: ['./ajout.component.scss'],
 })
 export class AjoutComponent {
-
-  
-
   article:any = {
     title: '',
     description: '',
     picture: '',
     date: '',
   };
+  selectedTag: string = '';
+  blogData: { tag: string, content: string }[] = [];
+  preview : any = null
+
+
+  addInput(){
+    if(this.selectedTag && this.selectedTag.trim() !== ''){
+      this.blogData.push({tag:this.selectedTag, content:''});
+      this.selectedTag = '';
+    }
+  }
 
 
 
-  
+
   addArticle() {
    this._shared.createNewArticle(this.article)
    .subscribe(
