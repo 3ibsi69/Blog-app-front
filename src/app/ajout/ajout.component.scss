@@ -6,31 +6,65 @@ margin-bottom:20px ;
   flex-direction: column;
   align-items: center;
   margin-top: 10px;
+  overflow-x: hidden;
   
-
+  @mixin input {
+    width: 99%;
+    height: 50px;
+    border-radius: 5px;
+    border: none;
+    background: transparent;
+    margin-bottom: 50px;
+    padding: 5px;
+    outline: none;
+    text-transform: capitalize;
+  
+    &::placeholder {
+      @content;
+    }
+  }
+  
   .inputs {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     margin-top: 10px;
+    width: 100%;
+    padding: 10px;
+    
+    .input-title {
+      @include input{
+      color: #ccc;
+      font-size: 25px;
+      font-weight: bold;
+      text-transform: capitalize;}
+    font-weight: bold;
+    font-size: 25px;
 
-    .input {
-      width: 300px;
-      height: 30px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-      margin-bottom: 10px;
-      padding: 5px;
-      font-size: 16px;
-      margin-left: 10px;
 
-      &:focus {
-        outline: none;
-        border: 1px solid #000;
-      }
+    }
+    .input-desc{
+      @include input{
+      color: #ccc;
+      font-size: 25px;
+      font-weight: bold;
+      text-transform: capitalize;}
+    font-size: 18px;
+
+    }
+    .input-url{
+      @include input{
+      color: #ccc;
+      font-size: 25px;
+      font-weight: bold;
+      text-transform: capitalize;}
+    font-size: 18px;
+
     }
   }
+
+  
   .buttons {
     display: flex;
     flex-direction: row;

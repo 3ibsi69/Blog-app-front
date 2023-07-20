@@ -4,26 +4,37 @@
 
   <div class="inputs">
     <input
-      class="input"
+      class="input-title"
       type="text"
       placeholder="title"
       [(ngModel)]="article.title"
     />
-    <input
-      class="input"
-      type="text"
-      placeholder="description"
+
+    <textarea
+      class="input-desc"
+      placeholder="Description"
       [(ngModel)]="article.description"
-    />
+    ></textarea>
+
     <input
-      class="input"
+      class="input-url"
       type="text"
       placeholder="Pic Url"
       [(ngModel)]="article.picture"
     />
+
+    <ng-container *ngFor="let i of inputs">
+      <input
+        class="input-title"
+        type="text"
+        [(ngModel)]="i.value"
+        placeholder="title"
+      />
+    </ng-container>
   </div>
 
   <div class="buttons">
     <button class="btn" (click)="addArticle()">Add</button>
+    <button class="btn" (click)="Addtitle()">addee</button>
   </div>
 </div>

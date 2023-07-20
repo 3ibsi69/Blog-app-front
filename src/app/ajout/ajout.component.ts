@@ -8,14 +8,22 @@ import { SharedService } from '../shared.service';
 })
 export class AjoutComponent {
 
+  
 
-
-  article = {
+  article:any = {
     title: '',
     description: '',
     picture: '',
     date: '',
   };
+
+  inputs: any[] = [];
+
+
+  Addtitle() {
+    this.inputs.push({ value: '' });
+  }
+ 
 
 
   addArticle() {
@@ -36,6 +44,7 @@ export class AjoutComponent {
     )
   
   }
+  
 
   constructor( public _shared:SharedService ) {}
 

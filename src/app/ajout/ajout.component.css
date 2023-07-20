@@ -5,27 +5,89 @@
   flex-direction: column;
   align-items: center;
   margin-top: 10px;
+  overflow-x: hidden;
 }
 .container .inputs {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-top: 10px;
+  width: 100%;
+  padding: 10px;
 }
-.container .inputs .input {
-  width: 300px;
-  height: 30px;
+.container .inputs .input-title {
+  width: 99%;
+  height: 50px;
   border-radius: 5px;
-  border: 1px solid #ccc;
-  margin-bottom: 10px;
+  border: none;
+  background: transparent;
+  margin-bottom: 50px;
   padding: 5px;
-  font-size: 16px;
-  margin-left: 10px;
-}
-.container .inputs .input:focus {
   outline: none;
-  border: 1px solid #000;
+  text-transform: capitalize;
+  font-weight: bold;
+  font-size: 25px;
+}
+.container .inputs .input-title::-moz-placeholder {
+  color: #ccc;
+  font-size: 25px;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+.container .inputs .input-title::placeholder {
+  color: #ccc;
+  font-size: 25px;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+.container .inputs .input-desc {
+  width: 99%;
+  height: 50px;
+  border-radius: 5px;
+  border: none;
+  background: transparent;
+  margin-bottom: 50px;
+  padding: 5px;
+  outline: none;
+  text-transform: capitalize;
+  font-size: 18px;
+}
+.container .inputs .input-desc::-moz-placeholder {
+  color: #ccc;
+  font-size: 25px;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+.container .inputs .input-desc::placeholder {
+  color: #ccc;
+  font-size: 25px;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+.container .inputs .input-url {
+  width: 99%;
+  height: 50px;
+  border-radius: 5px;
+  border: none;
+  background: transparent;
+  margin-bottom: 50px;
+  padding: 5px;
+  outline: none;
+  text-transform: capitalize;
+  font-size: 18px;
+}
+.container .inputs .input-url::-moz-placeholder {
+  color: #ccc;
+  font-size: 25px;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+.container .inputs .input-url::placeholder {
+  color: #ccc;
+  font-size: 25px;
+  font-weight: bold;
+  text-transform: capitalize;
 }
 .container .buttons {
   display: flex;
