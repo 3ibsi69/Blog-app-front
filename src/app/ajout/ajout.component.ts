@@ -17,15 +17,9 @@ export class AjoutComponent {
     date: '',
   };
 
-  inputs: any[] = [];
 
 
-  Addtitle() {
-    this.inputs.push({ value: '' });
-  }
- 
-
-
+  
   addArticle() {
    this._shared.createNewArticle(this.article)
    .subscribe(

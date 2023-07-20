@@ -1,6 +1,5 @@
 <div class="container">
   <h1 class="header">Add Article</h1>
-  <!-- add a navbar with 2 words show and add -->
 
   <div class="inputs">
     <input
@@ -22,19 +21,9 @@
       placeholder="Pic Url"
       [(ngModel)]="article.picture"
     />
-
-    <ng-container *ngFor="let i of inputs">
-      <input
-        class="input-title"
-        type="text"
-        [(ngModel)]="i.value"
-        placeholder="title"
-      />
-    </ng-container>
   </div>
 
   <div class="buttons">
     <button class="btn" (click)="addArticle()">Add</button>
-    <button class="btn" (click)="Addtitle()">addee</button>
   </div>
 </div>
