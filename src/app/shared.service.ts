@@ -11,6 +11,7 @@ export class SharedService {
 
 
   createNewArticle(article:any){
+  console.log("Creating new article:", article);
 
      return this.http.post(this.url,article);
 

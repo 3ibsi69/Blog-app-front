@@ -1,46 +1,94 @@
-<div class="container">
-  <h1 class="header">Add Article</h1>
+<!-- <div class="container-blog">
+  <div class="create">
+    <div>
+      <div class="head-create">
+        <input type="text" placeholder="title" #title />
+        <input type="text" placeholder="wallpaper" #wallpaper />
+      </div>
+      <div class="add-content">
+        <label for="tag">Tag:</label>
+        <select [(ngModel)]="selectedTag" id="tag">
+          <option value="">Select a tag</option>
+          <option value="title">Title</option>
+          <option value="text">Text</option>
+          <option value="img">image</option>
+        </select>
+        <button (click)="addInput()">+</button>
+      </div>
+    </div>
 
-  <div class="inputs">
-    <div *ngFor="let i of blogData">
-      <input
-        *ngIf="i.tag !== 'title' && i.tag !== 'description' && i.tag !== 'img'"
-        type="text"
-        [placeholder]="i.tag"
-        [(ngModel)]="i.content"
-      />
-      <input
-        *ngIf="i.tag === 'title'"
-        type="text"
-        class="input-title"
-        [placeholder]="i.tag"
-        [(ngModel)]="article.title"
-      />
-      <input
-        *ngIf="i.tag === 'description'"
-        type="text"
-        class="input-desc"
-        [placeholder]="i.tag"
-        [(ngModel)]="article.description"
-      />
-      <input
-        *ngIf="i.tag === 'img'"
-        type="text"
-        class="input-url"
-        [placeholder]="i.tag"
-        [(ngModel)]="article.picture"
-      />
+    <div *ngFor="let item of blogData">
+      <input type="text" [placeholder]="item.tag" [(ngModel)]="item.content" />
+    </div>
+
+    <button (click)="saveBlog(title.value, wallpaper.value)">Preview</button>
+    <button (click)="addBlog()">addblog</button>
+  </div>
+  <div class="preview">
+    <div class="main-blog" *ngIf="preview !== null">
+      <div class="main-left">
+        <img *ngIf="preview.wallpaper" [src]="preview.wallpaper" alt="" />
+      </div>
+      <div class="main-right">
+        <h1
+          class="display-4 fw-bold text-body-emphasis"
+          *ngIf="preview.wallpaper"
+        >
+          {{ preview.title }}
+        </h1>
+
+        <div *ngFor="let e of preview.content">
+          <h2 class="pb-2 border-bottom" *ngIf="e.tag === 'title'">
+            {{ e.content }}
+          </h2>
+          <p *ngIf="e.tag === 'text'">
+            {{ e.content }}
+          </p>
+          <img
+            *ngIf="e.tag === 'img'"
+            [src]="e.content"
+            style="width: 50%; margin: 0 auto"
+            alt=""
+          />
+        </div>
+      </div>
     </div>
   </div>
+</div> -->
 
-  <div class="buttons">
-    <button class="btn" (click)="addArticle()">Add</button>
-    <select [(ngModel)]="selectedTag" id="tag">
-      <option value="">Select a tag</option>
-      <option value="title">Title</option>
-      <option value="description">Description</option>
-      <option value="img">Picture</option>
-    </select>
-    <button class="btn" (click)="addInput()">+</button>
+<div class="container">
+  <select [(ngModel)]="selectTag">
+    <option value="">choose</option>
+    <option value="title">title</option>
+    <option value="description">description</option>
+    <option value="img">img</option>
+  </select>
+  <div class="btns">
+    <button (click)="addInput()">+</button>
+    <button (click)="addBlog()">Save</button>
+  </div>
+  <div class="inputs">
+    <input type="text" placeholder="title" />
+    <input type="text" placeholder="img" />
+
+    <div class="inputs-option" *ngFor="let i of blogData">
+      <ng-container *ngIf="i.tag === 'title'">
+        <input
+          type="text"
+          placeholder="{{ i.tag }}"
+          [(ngModel)]="i.description"
+        />
+      </ng-container>
+      <ng-container *ngIf="i.tag === 'description'">
+        <input
+          type="text"
+          placeholder="{{ i.tag }}"
+          [(ngModel)]="i.description"
+        />
+      </ng-container>
+      <ng-container *ngIf="i.tag === 'img'">
+        <input type="text" placeholder="{{ i.tag }}" [(ngModel)]="i.img" />
+      </ng-container>
+    </div>
   </div>
 </div>

@@ -4,51 +4,57 @@ import { SharedService } from '../shared.service';
 @Component({
   selector: 'app-ajout',
   templateUrl: './ajout.component.html',
-  styleUrls: ['./ajout.component.scss'],
+  styleUrls: ['./ajout.component.scss']
 })
 export class AjoutComponent {
-  article:any = {
-    title: '',
-    description: '',
-    picture: '',
-    date: '',
-  };
-  selectedTag: string = '';
-  blogData: { tag: string, content: string }[] = [];
-  preview : any = null
+  // saveBlog(title: any, wallpaper: any) {
+  //   console.log(this.blogData);
+  //   var obj = {
+  //     title: title,
+  //     wallpaper: wallpaper,
+  //     content: this.blogData
+  //   };
+  //   this.preview = obj;
+  // }
 
+  // addBlog() {
+  //   this._shared.createNewArticle(this.preview)
+  //     .subscribe(
+  //       (res: any) => {
+  //         console.log(this.preview)
+  //         this.preview = {}; 
+  //       },
+  //       (err: any) => {
+  //         console.log(err);
+  //       }
+  //     );
+  // }
+selectTag:string="";
+blogData:{tag:string,title:string,description:string,img:string}[]=[];
+addInput() {
 
-  addInput(){
-    if(this.selectedTag && this.selectedTag.trim() !== ''){
-      this.blogData.push({tag:this.selectedTag, content:''});
-      this.selectedTag = '';
+     if (this.selectTag && this.selectTag.trim() !== '') {
+       this.blogData.push({ tag: this.selectTag, title: '', description: '', img: '' });
+       this.selectTag = '';
+       console.log(this.blogData);
+     }
+   }
+   addBlog(){
+   var  article={
     }
-  }
-
-
-
-
-  addArticle() {
-   this._shared.createNewArticle(this.article)
-   .subscribe(
-      res=>{
-        this.article = {
-          title: '',
-          description: '',
-          picture: '',
-          date: '',
-        };
+    this._shared.createNewArticle(this.blogData)
+    .subscribe(
+      (res: any) => {
+        console.log(this.blogData)
+        this.blogData = []; 
       },
-      err=>{
+      (err: any) => {
         console.log(err);
       }
+    );
+   }
 
-    )
-  
-  }
-  
 
-  constructor( public _shared:SharedService ) {}
 
-  ngOnInit(): void {}
+  constructor(public _shared: SharedService) { }
 }

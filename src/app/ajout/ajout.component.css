@@ -1,115 +1,64 @@
 .container {
+  width: 600px;
+  min-height: 150px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #ccc;
+}
+.container select {
   width: 100%;
-  margin-bottom: 20px;
+  height: 40px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 0 10px;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.container select:focus {
+  outline: none;
+  border-color: #2f89fc;
+}
+.container .btns {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
-  margin-top: 10px;
-  overflow-x: hidden;
+}
+.container button {
+  width: 150px;
+  height: 40px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 0 10px;
+  font-size: 16px;
+  margin: 10px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.container button:hover {
+  outline: none;
+  border-color: #2f89fc;
 }
 .container .inputs {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: 10px;
-  width: 100%;
-  padding: 10px;
-}
-.container .inputs .input-title {
-  width: 99%;
-  height: 50px;
-  border-radius: 5px;
-  border: none;
-  background: transparent;
-  margin-bottom: 50px;
-  padding: 5px;
-  outline: none;
-  text-transform: capitalize;
-  font-weight: bold;
-  font-size: 25px;
-}
-.container .inputs .input-title::-moz-placeholder {
-  color: #ccc;
-  font-size: 25px;
-  font-weight: bold;
-  text-transform: capitalize;
-}
-.container .inputs .input-title::placeholder {
-  color: #ccc;
-  font-size: 25px;
-  font-weight: bold;
-  text-transform: capitalize;
-}
-.container .inputs .input-desc {
-  width: 99%;
-  height: 50px;
-  border-radius: 5px;
-  border: none;
-  background: transparent;
-  margin-bottom: 50px;
-  padding: 5px;
-  outline: none;
-  text-transform: capitalize;
-  font-size: 18px;
-}
-.container .inputs .input-desc::-moz-placeholder {
-  color: #ccc;
-  font-size: 25px;
-  font-weight: bold;
-  text-transform: capitalize;
-}
-.container .inputs .input-desc::placeholder {
-  color: #ccc;
-  font-size: 25px;
-  font-weight: bold;
-  text-transform: capitalize;
-}
-.container .inputs .input-url {
-  width: 99%;
-  height: 50px;
-  border-radius: 5px;
-  border: none;
-  background: transparent;
-  margin-bottom: 50px;
-  padding: 5px;
-  outline: none;
-  text-transform: capitalize;
-  font-size: 18px;
-}
-.container .inputs .input-url::-moz-placeholder {
-  color: #ccc;
-  font-size: 25px;
-  font-weight: bold;
-  text-transform: capitalize;
-}
-.container .inputs .input-url::placeholder {
-  color: #ccc;
-  font-size: 25px;
-  font-weight: bold;
-  text-transform: capitalize;
-}
-.container .buttons {
-  display: flex;
-  flex-direction: row;
   align-items: center;
-  justify-content: center;
-  margin-top: 10px;
-}
-.container .buttons .btn {
-  width: 100px;
-  height: 30px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
   margin-bottom: 10px;
-  padding: 5px;
+}
+.container .inputs input {
+  width: 90%;
+  height: 40px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 0 10px;
   font-size: 16px;
-  margin-left: 10px;
+  margin-bottom: 10px;
 }
-.container .buttons .btn:focus {
+.container .inputs input:focus {
   outline: none;
-  border: 1px solid #000;
-}
-.container .buttons .btn:first-child:hover {
-  background-color: #0d6efd;
-  color: #fff;
+  border-color: #2f89fc;
 }/*# sourceMappingURL=ajout.component.css.map */

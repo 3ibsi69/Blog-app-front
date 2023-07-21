@@ -1,96 +1,68 @@
-.container {
+.container{
+  width: 600px;
+  min-height: 150px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #ccc;
+select{
+  width: 100%;
+  height: 40px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 0 10px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  &:focus{
+    outline: none;
+    border-color: #2f89fc;
+  }
+}
+.btns{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+button{
+  width: 150px;
+  height: 40px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 0 10px;
+  font-size: 16px;
+  margin: 10px;
+  // center them in a row
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 
-width: 100%;
-margin-bottom:20px ;
+  &:hover{
+    outline: none;
+    border-color: #2f89fc;
+  }
+}
+.inputs{
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  margin-top: 10px;
-  overflow-x: hidden;
-  
-  @mixin input {
-    width: 99%;
-    height: 50px;
+  margin-bottom: 10px;
+  input{
+    width: 90%;
+    height: 40px;
+    border: 1px solid #ccc;
     border-radius: 5px;
-    border: none;
-    background: transparent;
-    margin-bottom: 50px;
-    padding: 5px;
-    outline: none;
-    text-transform: capitalize;
-  
-    &::placeholder {
-      @content;
+    padding: 0 10px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    &:focus{
+      outline: none;
+      border-color: #2f89fc;
     }
   }
-  
-  .inputs {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-top: 10px;
-    width: 100%;
-    padding: 10px;
-    
-    .input-title {
-      @include input{
-      color: #ccc;
-      font-size: 25px;
-      font-weight: bold;
-      text-transform: capitalize;}
-    font-weight: bold;
-    font-size: 25px;
+}
 
 
-    }
-    .input-desc{
-      @include input{
-      color: #ccc;
-      font-size: 25px;
-      font-weight: bold;
-      text-transform: capitalize;}
-    font-size: 18px;
-
-    }
-    .input-url{
-      @include input{
-      color: #ccc;
-      font-size: 25px;
-      font-weight: bold;
-      text-transform: capitalize;}
-    font-size: 18px;
-
-    }
-  }
-
-  
-  .buttons {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    margin-top: 10px;
-
-    .btn {
-      width: 100px;
-      height: 30px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-      margin-bottom: 10px;
-      padding: 5px;
-      font-size: 16px;
-      margin-left: 10px;
-
-      &:focus {
-        outline: none;
-        border: 1px solid #000;
-      }
-    }
-    .btn:first-child:hover {
-      background-color: #0d6efd;
-      color: #fff;
-    }
-    
-  }
-  
 }
