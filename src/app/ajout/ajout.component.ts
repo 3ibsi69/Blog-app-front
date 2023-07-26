@@ -7,28 +7,6 @@ import { SharedService } from '../shared.service';
   styleUrls: ['./ajout.component.scss']
 })
 export class AjoutComponent {
-  // saveBlog(title: any, wallpaper: any) {
-  //   console.log(this.blogData);
-  //   var obj = {
-  //     title: title,
-  //     wallpaper: wallpaper,
-  //     content: this.blogData
-  //   };
-  //   this.preview = obj;
-  // }
-
-  // addBlog() {
-  //   this._shared.createNewArticle(this.preview)
-  //     .subscribe(
-  //       (res: any) => {
-  //         console.log(this.preview)
-  //         this.preview = {}; 
-  //       },
-  //       (err: any) => {
-  //         console.log(err);
-  //       }
-  //     );
-  // }
 selectTag:string="";
 blogData:{tag:string,title:string,description:string,img:string}[]=[];
 addInput() {
