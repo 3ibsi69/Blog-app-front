@@ -1,6 +1,5 @@
 <div class="container">
   <h1 class="header">Update Article</h1>
-  <!-- add a navbar with 2 words show and add -->
 
   <div class="inputs">
     <input
@@ -8,18 +7,21 @@
       type="text"
       placeholder="title"
       [(ngModel)]="article.title"
+      *ngIf="article.title"
     />
     <input
       class="input"
       type="text"
       placeholder="description"
       [(ngModel)]="article.description"
+      *ngIf="article.description"
     />
     <input
       class="input"
       type="text"
       placeholder="Pic Url"
       [(ngModel)]="article.picture"
+      *ngIf="article.picture"
     />
   </div>
 

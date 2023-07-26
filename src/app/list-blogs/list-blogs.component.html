@@ -1,13 +1,13 @@
 <ng-container *ngFor="let i of Articles">
-  <div class="Articles" *ngIf="i.title || i.description || i.picture">
+  <div class="Articles" *ngIf="i.title || i.description || i.img">
     <div class="article_title" *ngIf="i.title">
       <h1>{{ i.title }}</h1>
     </div>
     <div class="article_description" *ngIf="i.description">
       <p>{{ i.description }}</p>
     </div>
-    <div class="article_pic" *ngIf="i.picture">
-      <img [src]="i.picture" alt="" width="50%" height="50%" />
+    <div class="article_pic" *ngIf="i.img">
+      <img [src]="i.img" alt="" />
     </div>
 
     <div class="article_buttons">
