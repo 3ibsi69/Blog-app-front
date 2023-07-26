@@ -1,21 +1,18 @@
-<div class="Articles" *ngFor="let i of Articles">
-  <div class="article_title">
-    <h1>Title:</h1>
-    <p>{{ i.title }}</p>
-  </div>
-  <div class="article_description">
-    <h1>description:</h1>
-    <p>
-      {{ i.description }}
-    </p>
-  </div>
-  <div class="article_pic">
-    <h1>image:</h1>
-    <img [src]="i.picture" alt="" />
-  </div>
+<ng-container *ngFor="let i of Articles">
+  <div class="Articles" *ngIf="i.title || i.description || i.picture">
+    <div class="article_title" *ngIf="i.title">
+      <h1>{{ i.title }}</h1>
+    </div>
+    <div class="article_description" *ngIf="i.description">
+      <p>{{ i.description }}</p>
+    </div>
+    <div class="article_pic" *ngIf="i.picture">
+      <img [src]="i.picture" alt="" width="50%" height="50%" />
+    </div>
 
-  <div class="article_buttons">
-    <button [routerLink]="['/update', i._id]" class="btn">Edit</button>
-    <button class="btn" (click)="deleteArticle(i._id)">Delete</button>
+    <div class="article_buttons">
+      <button [routerLink]="['/update', i._id]" class="btn">Edit</button>
+      <button class="btn" (click)="deleteArticle(i._id)">Delete</button>
+    </div>
   </div>
-</div>
+</ng-container>

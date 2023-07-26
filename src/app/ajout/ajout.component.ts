@@ -18,8 +18,6 @@ addInput() {
      }
    }
    addBlog(){
-   var  article={
-    }
     this._shared.createNewArticle(this.blogData)
     .subscribe(
       (res: any) => {
