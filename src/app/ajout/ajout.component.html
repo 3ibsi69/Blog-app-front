@@ -10,28 +10,22 @@
     <button (click)="addBlog()">Save</button>
   </div>
   <div class="inputs">
-    <div class="inputs-option" *ngFor="let item of blogData">
-      <ng-container *ngIf="item.tag === 'title'">
+    <ng-container *ngFor="let item of blogData">
+      <ng-container *ngIf="item.tag === 'img'; else otherInput">
         <input
           type="text"
           placeholder="{{ item.tag }}"
           [(ngModel)]="item.value"
         />
+        <br />
       </ng-container>
-      <ng-container *ngIf="item.tag === 'description'">
+      <ng-template #otherInput>
         <input
           type="text"
           placeholder="{{ item.tag }}"
           [(ngModel)]="item.value"
         />
-      </ng-container>
-      <ng-container *ngIf="item.tag === 'img'">
-        <input
-          type="text"
-          placeholder="{{ item.tag }}"
-          [(ngModel)]="item.value"
-        />
-      </ng-container>
-    </div>
+      </ng-template>
+    </ng-container>
   </div>
 </div>

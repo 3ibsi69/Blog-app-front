@@ -14,13 +14,17 @@ export class AjoutComponent {
     if (this.selectTag && this.selectTag.trim() !== '') {
       this.blogData.push({ tag: this.selectTag, value: '' });
       this.selectTag = '';
-        }
+    }
   }
 
   addBlog() {
-    const articleData: { [key: string]: string } = {}; 
+    const articleData: { [key: string]: string | string[] } = {}; 
     this.blogData.forEach(item => {
-      articleData[item.tag] = item.value;
+      if (articleData[item.tag]) {
+        (articleData[item.tag] as string[]).push(item.value);
+      } else {
+        articleData[item.tag] = [item.value];
+      }
     });
 
     this._shared.createNewArticle(articleData)
