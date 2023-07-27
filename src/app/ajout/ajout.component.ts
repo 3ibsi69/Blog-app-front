@@ -7,30 +7,32 @@ import { SharedService } from '../shared.service';
   styleUrls: ['./ajout.component.scss']
 })
 export class AjoutComponent {
-selectTag:string="";
-blogData:{tag:string,title:string,description:string,img:string}[]=[];
-addInput() {
+  selectTag: ''|'title' | 'description' | 'img' = '';
+  blogData: { tag: string, value: string }[] = [];
 
-     if (this.selectTag && this.selectTag.trim() !== '') {
-       this.blogData.push({ tag: this.selectTag, title: '', description: '', img: '' });
-       this.selectTag = '';
-       console.log(this.blogData);
-     }
-   }
-   addBlog(){
-    this._shared.createNewArticle(this.blogData)
-    .subscribe(
-      (res: any) => {
-        console.log(this.blogData)
-        this.blogData = []; 
-      },
-      (err: any) => {
-        console.log(err);
-      }
-    );
-   }
+  addInput() {
+    if (this.selectTag && this.selectTag.trim() !== '') {
+      this.blogData.push({ tag: this.selectTag, value: '' });
+      this.selectTag = '';
+        }
+  }
 
+  addBlog() {
+    const articleData: { [key: string]: string } = {}; 
+    this.blogData.forEach(item => {
+      articleData[item.tag] = item.value;
+    });
 
+    this._shared.createNewArticle(articleData)
+      .subscribe(
+        (res: any) => {
+          this.blogData = []; 
+        },
+        (err: any) => {
+          console.log(err); 
+        }
+      );
+  }
 
   constructor(public _shared: SharedService) { }
 }

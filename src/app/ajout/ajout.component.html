@@ -1,6 +1,6 @@
 <div class="container">
   <select [(ngModel)]="selectTag">
-    <option value="">choose</option>
+    <option value="">choose something to add</option>
     <option value="title">title</option>
     <option value="description">description</option>
     <option value="img">img</option>
@@ -10,19 +10,27 @@
     <button (click)="addBlog()">Save</button>
   </div>
   <div class="inputs">
-    <div class="inputs-option" *ngFor="let i of blogData">
-      <ng-container *ngIf="i.tag === 'title'">
-        <input type="text" placeholder="{{ i.tag }}" [(ngModel)]="i.title" />
-      </ng-container>
-      <ng-container *ngIf="i.tag === 'description'">
+    <div class="inputs-option" *ngFor="let item of blogData">
+      <ng-container *ngIf="item.tag === 'title'">
         <input
           type="text"
-          placeholder="{{ i.tag }}"
-          [(ngModel)]="i.description"
+          placeholder="{{ item.tag }}"
+          [(ngModel)]="item.value"
         />
       </ng-container>
-      <ng-container *ngIf="i.tag === 'img'">
-        <input type="text" placeholder="{{ i.tag }}" [(ngModel)]="i.img" />
+      <ng-container *ngIf="item.tag === 'description'">
+        <input
+          type="text"
+          placeholder="{{ item.tag }}"
+          [(ngModel)]="item.value"
+        />
+      </ng-container>
+      <ng-container *ngIf="item.tag === 'img'">
+        <input
+          type="text"
+          placeholder="{{ item.tag }}"
+          [(ngModel)]="item.value"
+        />
       </ng-container>
     </div>
   </div>
